@@ -1,0 +1,27 @@
+package soapbox;
+
+message Question {
+  optional string text = 1;
+
+  enum QuestionType {
+    CHECKBOX = 0;
+    RADIO = 1;
+    SHORTFORM = 2;
+    LONGFORM = 3;
+  }
+
+  optional QuestionType type = 2;
+  optional Prompts prompts = 3;
+}
+
+message Prompt {
+  optional string text = 1;
+}
+
+message Questions {
+  repeated Question question = 1;
+}
+
+message Prompts {
+  repeated Prompt prompt = 1;
+}
